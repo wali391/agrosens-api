@@ -8,6 +8,7 @@ const getSensors = (req, res) => {
 const addSensorval = (req, res) => {
 
     const sensor = new Sensor({
+        pump_stat: req.body.pump_stat,
         water_level: req.body.water_level,
         humidity: req.body.humidity,
         rain_level: req.body.rain_level,
@@ -19,6 +20,7 @@ const addSensorval = (req, res) => {
     });
     sensor.save().then(() =>
         res.status(200).json({
+            status: 200,
             success: true,
             data: sensor
         })

@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const SensorsSchema = new mongoose.Schema({
+    pump_stat: {
+        type: Number,
+        required: true,
+    },
     water_level: {
         type: Number,
         required: true,
